@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 import time
 
 with webdriver.Chrome() as browser:
-    browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/huge_form.html")
     elements = browser.find_elements(By.TAG_NAME, "input")
     for element in elements:

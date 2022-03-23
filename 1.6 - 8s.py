@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 import time
 
 with webdriver.Chrome() as browser:
-    browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/find_xpath_form ")
     input1 = browser.find_element(By.TAG_NAME, "input")
     input1.send_keys("Ivan")
