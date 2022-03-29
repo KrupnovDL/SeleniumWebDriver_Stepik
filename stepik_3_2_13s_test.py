@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import unittest
 
 
 def form_control_required(link):
@@ -27,13 +26,9 @@ def form_control_required(link):
         return welcome_text
 
 
-class TestAbs(unittest.TestCase):
-    def test_abs1(self):
-        self.assertEqual(form_control_required("http://suninjuly.github.io/registration1.html"), "Congratulations! You have successfully registered!", "Registration failed")
-
-    def test_abs2(self):
-        self.assertEqual(form_control_required("http://suninjuly.github.io/registration2.html"), "Congratulations! You have successfully registered!", "Registration failed")
+def test_abs1():
+    assert form_control_required("http://suninjuly.github.io/registration1.html") == "Congratulations! You have successfully registered!", "Registration failed"
 
 
-if __name__ == "__main__":
-    unittest.main()
+def test_abs2():
+    assert form_control_required("http://suninjuly.github.io/registration2.html") == "Congratulations! You have successfully registered!", "Registration failed"
