@@ -5,7 +5,6 @@ import time
 
 
 with webdriver.Chrome() as browser:
-    browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/selects1.html")
     num1 = int(browser.find_element(By.ID, "num1").text)
     num2 = int(browser.find_element(By.ID, "num2").text)
