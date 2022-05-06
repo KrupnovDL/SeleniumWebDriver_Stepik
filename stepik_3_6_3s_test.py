@@ -14,12 +14,12 @@ def calc():
 
 
 @pytest.mark.parametrize('link_number', ["895", "896", "897", "898", "899", "903", "904", "905"])
-def test_parameterization(browser, link_number):
-    browser.get(f"https://stepik.org/lesson/236{link_number}/step/1")
-    input_field = browser.find_element(By.TAG_NAME, "textarea")
+def test_parameterization(driver, link_number):
+    driver.get(f"https://stepik.org/lesson/236{link_number}/step/1")
+    input_field = driver.find_element(By.TAG_NAME, "textarea")
     input_field.send_keys(calc())
-    button = WebDriverWait(browser, MAX_WAITING_TIME).until(
+    button = WebDriverWait(driver, MAX_WAITING_TIME).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, ".submit-submission"))
     )
     button.click()
-    assert browser.find_element(By.CSS_SELECTOR, ".smart-hints__hint").text == "Correct!", "The answer isn't correct"
+    assert driver.find_element(By.CSS_SELECTOR, ".smart-hints__hint").text == "Correct!", "The answer isn't correct"

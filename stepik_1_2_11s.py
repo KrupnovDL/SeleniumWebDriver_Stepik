@@ -2,10 +2,13 @@ import time
 
 # webdriver это и есть набор команд для управления браузером
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 # Инициализируем драйвер браузера. После этой команды вы должны увидеть новое открытое окно браузера
-driver = webdriver.Chrome()
+s = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=s)
 
 # команда time.sleep устанавливает паузу в 5 секунд, чтобы мы успели увидеть, что происходит в браузере
 time.sleep(5)

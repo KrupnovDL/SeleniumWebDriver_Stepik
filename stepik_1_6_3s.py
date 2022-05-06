@@ -1,9 +1,12 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 link = "http://suninjuly.github.io/simple_form_find_task.html"
 
-with webdriver.Chrome() as browser:
-    browser.get(link)
-    button = browser.find_element(By.ID, "submit_button")
+s = Service(ChromeDriverManager().install())
+with webdriver.Chrome(service=s) as driver:
+    driver.get(link)
+    button = driver.find_element(By.ID, "submit_button")
     button.click()
