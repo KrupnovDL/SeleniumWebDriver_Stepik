@@ -3,10 +3,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
+from gh_token import GH_TOKEN
 import os
 
 
-os.environ['GH_TOKEN'] = "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"
+os.environ['GH_TOKEN'] = GH_TOKEN
 
 
 def pytest_addoption(parser):
